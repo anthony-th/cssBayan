@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #292929;
   min-width: 20rem;
@@ -18,7 +22,7 @@ footer {
 }
 
 main {
-  padding: 0 2rem;
+  padding: 0 2rem 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,12 +48,12 @@ main {
   border-top-right-radius: 0.5rem;
 }
 .item:last-child .item-title,
-.item:last-child .checkbox:checked ~ .item-meme {
+.item:last-child .radio-btn:checked ~ .item-meme {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
 
-.checkbox {
+.radio-btn {
   display: none;
 }
 
@@ -76,7 +80,7 @@ main {
   background-color: #ddd;
 }
 
-.checkbox:checked ~ .item-title {
+.radio-btn:checked ~ .item-title {
   background-color: #ddd;
 }
 
@@ -88,6 +92,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #494949;
 }
 
 .images {
@@ -95,13 +100,14 @@ main {
   transition: all 1s ease-in-out;
 }
 
-.checkbox:checked ~ .item-meme {
+.radio-btn:checked ~ .item-meme,
+.radio-btn:hover ~ .item-meme {
   max-height: 100vh;
-  background: #494949;
   min-height: max-content;
 }
 
-.checkbox:checked ~ .item-meme .images {
+.radio-btn:hover ~ .item-meme .images,
+.radio-btn:checked ~ .item-meme .images {
   margin: 1rem;
   object-fit: cover;
   min-height: 100%;
@@ -133,7 +139,7 @@ main {
   .images {
     max-width: 100%;
   }
-  .checkbox:checked ~ .item-meme .images {
+  .radio-btn:checked ~ .item-meme .images {
     margin: .4rem;
   }
 }
