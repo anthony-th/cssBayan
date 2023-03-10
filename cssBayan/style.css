@@ -112,6 +112,11 @@ main .item .item-label .item-title svg {
   visibility: hidden;
 }
 
+.description {
+  display: flex;
+  gap: 1rem;
+}
+
 .item:hover {
   cursor: pointer;
 }
@@ -128,6 +133,11 @@ main .item .item-label .item-title svg {
 
 .item:active .item-label .item-meme .images {
   opacity: 0.5;
+}
+
+.item:active .item-label .item-title .description .title-number {
+  color: #353535;
+  background-color: #fefae0;
 }
 
 .radio-btn:checked ~ .item-label .item-title svg,
