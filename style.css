@@ -50,6 +50,7 @@ main {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+
 .item:last-child .item-title,
 .item:last-child .radio-btn:checked ~ .item-meme {
   border-bottom-left-radius: 0.5rem;
@@ -104,7 +105,6 @@ main:hover .item-title {
 
 main svg {
   visibility: hidden;
-  
 }
 
 .item:hover {
@@ -163,34 +163,45 @@ main:hover svg {
 }
 
 @media screen and (max-width: 1024px) {
+  
   main {
     width: 67%;
   }
+
 }
 
 @media screen and (max-width: 800px) {
+
   .item-title {
     font-size: 1.4rem;
   }
+
   main {
     width: 87%;
   }
+
   .images {
     max-width: 76%;
   }
+
   .title {
     font-size: 2em;
   }
+
 }
 
 @media screen and (max-width: 480px) {
+
   main {
     width: 87%;
   }
+
   .images {
     max-width: 100%;
   }
+
   .radio-btn:checked ~ .item-meme .images {
     margin: .4rem;
   }
+
 }
