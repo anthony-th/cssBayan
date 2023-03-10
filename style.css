@@ -14,6 +14,10 @@ html {
 body {
   background: #1f1f1f;
   min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 header,
@@ -162,8 +166,28 @@ main:hover svg {
   min-height: 100%;
 }
 
+.copyright {
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  color: #666666;
+  padding: 1rem 0;
+}
+
+.copyright-link {
+  text-decoration: none;
+  color: #666666;
+  padding: 0.05rem 0.25rem 0;
+}
+
+.copyright-link:hover {
+  color: #fefae0;
+  background-color: #494949;
+  border-radius: 0.25rem;
+  opacity: 1;
+}
+
 @media screen and (max-width: 1024px) {
-  
+
   main {
     width: 67%;
   }
