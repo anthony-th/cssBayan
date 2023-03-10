@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
 }
 
 html {
@@ -11,7 +12,7 @@ html {
 }
 
 body {
-  background: #292929;
+  background: #1f1f1f;
   min-width: 20rem;
 }
 
@@ -22,25 +23,27 @@ footer {
 }
 
 main {
-  padding: 0 2rem 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 47%;
+  color: #fefae0;
+  padding: 0 0 2rem;
 }
 
 .title {
   font-family: 'Rubik Iso', cursive;
   text-align: center;
   padding: 1rem;
-  color: #cccccc;
-  font-size: 3em;
+  color: #ff006e;
+  font-size: 2em;
 }
 
 .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 67%;
+  width: 100%;
 }
 
 .item:first-child .item-title {
@@ -60,28 +63,74 @@ main {
 .item-title {
   font-family: 'Teko', sans-serif;
   cursor: pointer;
-  padding: 1rem;
-  font-size: 2rem;
-  background-color: #ccc;
+  padding: 0.5rem 1rem;
+  font-size: 1.7rem;
+  background-color: #353535;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main:hover .item-title {
+  color: #fefae0;
 }
 
 .title-number {
   font-family: 'Piedra', cursive;
-  color: #ffffff;
+  color: #fefae0;
   opacity: 85%;
-  padding: 0.2rem 0.4rem;
-  background-color: #292929;
+  padding: 0.05rem 0.4rem;
+  background-color: #353535;
   border-radius: 0.2rem;
   margin-right: 0.5rem;
+  border: 0.001em solid #ff006e;
 }
 
-.item-title:hover {
-  background-color: #ddd;
+main:hover .item-title {
+  background: #fefae0;
+  color: #353535;
 }
 
 .radio-btn:checked ~ .item-title {
-  background-color: #ddd;
+  background-color: #fefae0;
+  color: #353535;
+}
+
+.radio-btn:checked ~ .item-title .title-number,
+.item-title:hover .title-number {
+  color: #fefae0;
+}
+
+main svg {
+  visibility: hidden;
+  
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item:active .item-title {
+  color: #fefae0;
+  background-color: #353535;
+}
+
+.item:active .radio-btn ~ .item-title svg path {
+  stroke: #fefae0;
+}
+
+.item:active .item-meme .images {
+  opacity: 0.5;
+}
+
+.radio-btn:checked ~ .item-title svg,
+.item-title:hover svg {
+  transform: rotate(45deg);
+}
+
+main:hover svg {
+  visibility: visible;
 }
 
 .item-meme {
@@ -96,8 +145,8 @@ main {
 }
 
 .images {
-  min-width: 66%;
-  transition: all 1s ease-in-out;
+  min-width: 45%;
+  max-width: 60%;
 }
 
 .radio-btn:checked ~ .item-meme,
@@ -113,15 +162,21 @@ main {
   min-height: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  main {
+    width: 67%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .item-title {
     font-size: 1.4rem;
   }
-  .item {
+  main {
     width: 87%;
   }
   .images {
-    max-width: 86%;
+    max-width: 76%;
   }
   .title {
     font-size: 2em;
@@ -130,10 +185,6 @@ main {
 
 @media screen and (max-width: 480px) {
   main {
-    padding: 0;
-  }
-  
-  .item {
     width: 87%;
   }
   .images {
