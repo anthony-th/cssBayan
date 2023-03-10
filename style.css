@@ -103,7 +103,7 @@ main:hover .item-title {
   color: #353535;
 }
 
-.radio-btn:checked ~ .item-label {
+.radio-btn:checked ~ .item-label .item-title {
   background-color: #fefae0;
   color: #353535;
 }
