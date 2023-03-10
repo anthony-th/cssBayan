@@ -50,13 +50,15 @@ main {
   width: 100%;
 }
 
-.item:first-child .item-title {
+.item:first-child .item-title,
+.item:first-child .item-label  {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
 .item:last-child .item-title,
-.item:last-child .radio-btn:checked ~ .item-meme {
+.item:last-child .item-label,
+.item:last-child .radio-btn:checked ~ .item-label .item-meme {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
@@ -65,13 +67,18 @@ main {
   display: none;
 }
 
-.item-title {
-  font-family: 'Teko', sans-serif;
+.item-label {
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  font-size: 1.7rem;
   background-color: #353535;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  padding: 0.5rem 1rem;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,17 +103,12 @@ main:hover .item-title {
   color: #353535;
 }
 
-.radio-btn:checked ~ .item-title {
+.radio-btn:checked ~ .item-label {
   background-color: #fefae0;
   color: #353535;
 }
 
-.radio-btn:checked ~ .item-title .title-number,
-.item-title:hover .title-number {
-  color: #fefae0;
-}
-
-main svg {
+main .item .item-label .item-title svg {
   visibility: hidden;
 }
 
@@ -114,25 +116,26 @@ main svg {
   cursor: pointer;
 }
 
-.item:active .item-title {
+.item:active .item-label .item-title,
+.item:active .item-label {
   color: #fefae0;
   background-color: #353535;
 }
 
-.item:active .radio-btn ~ .item-title svg path {
+.item:active .radio-btn ~ .item-label .item-title svg path {
   stroke: #fefae0;
 }
 
-.item:active .item-meme .images {
+.item:active .item-label .item-meme .images {
   opacity: 0.5;
 }
 
-.radio-btn:checked ~ .item-title svg,
-.item-title:hover svg {
+.radio-btn:checked ~ .item-label .item-title svg,
+.item:hover .item-label .item-title svg {
   transform: rotate(45deg);
 }
 
-main:hover svg {
+main:hover .item .item-label .item-title svg {
   visibility: visible;
 }
 
@@ -153,15 +156,15 @@ main:hover svg {
   object-fit: cover;
 }
 
-.radio-btn:checked ~ .item-meme,
-.radio-btn:hover ~ .item-meme {
+.radio-btn:checked ~ .item-label .item-meme,
+.item:hover .item-label .item-meme {
   max-height: 100vh;
   min-height: max-content;
   padding: 1rem;
 }
 
-.radio-btn:hover ~ .item-meme .images,
-.radio-btn:checked ~ .item-meme .images {
+.radio-btn:hover ~ .item-label .item-meme .images,
+.radio-btn:checked ~ .item-label .item-meme .images {
   min-height: 100%;
 }
 
