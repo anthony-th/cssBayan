@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Piedra&family=Rubik+Iso&family=Teko:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +8,132 @@
 
 body {
   background: #292929;
+  min-width: 20rem;
+}
+
+header,
+main,
+footer {
+  margin: 0 auto;
+}
+
+main {
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-family: 'Rubik Iso', cursive;
+  text-align: center;
+  padding: 1rem;
+  color: #cccccc;
+  font-size: 3em;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 67%;
+}
+
+.item:first-child .item-title {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.item:last-child .item-title,
+.item:last-child .checkbox:checked ~ .item-meme {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.checkbox {
+  display: none;
+}
+
+.item-title {
+  font-family: 'Teko', sans-serif;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: #ccc;
+  width: 100%;
+}
+
+.title-number {
+  font-family: 'Piedra', cursive;
+  color: #ffffff;
+  opacity: 85%;
+  padding: 0.2rem 0.4rem;
+  background-color: #292929;
+  border-radius: 0.2rem;
+  margin-right: 0.5rem;
+}
+
+.item-title:hover {
+  background-color: #ddd;
+}
+
+.checkbox:checked ~ .item-title {
+  background-color: #ddd;
+}
+
+.item-meme {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  min-width: 66%;
+  transition: all 1s ease-in-out;
+}
+
+.checkbox:checked ~ .item-meme {
+  max-height: 100vh;
+  background: #494949;
+  min-height: max-content;
+}
+
+.checkbox:checked ~ .item-meme .images {
+  margin: 1rem;
+  object-fit: cover;
+  min-height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .item-title {
+    font-size: 1.4rem;
+  }
+  .item {
+    width: 87%;
+  }
+  .images {
+    max-width: 86%;
+  }
+  .title {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 0;
+  }
+  
+  .item {
+    width: 87%;
+  }
+  .images {
+    max-width: 100%;
+  }
+  .checkbox:checked ~ .item-meme .images {
+    margin: .4rem;
+  }
 }
