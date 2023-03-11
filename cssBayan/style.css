@@ -219,6 +219,11 @@ main .item .item-label .item-title svg {
 
   .item-title  {
     font-size: 1.4em;
+    padding: 0.5rem;
+  }
+
+  .description {
+    gap: 0.5rem;
   }
 
 }
