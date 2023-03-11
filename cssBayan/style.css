@@ -135,7 +135,7 @@ main .item .item-label .item-title svg {
 
 .item-meme {
   cursor: pointer;
-  width: 100%;
+  width: 98%;
   max-height: 0;
   overflow: hidden;
   transition: all 1s ease-in-out;
