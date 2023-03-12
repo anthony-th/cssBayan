@@ -114,10 +114,12 @@ main .item .item-label .item-title svg {
 .item:active .item-label {
   color: #fefae0;
   background-color: #353535;
+  opacity: 0.8;
 }
 
 .item:active .radio-btn ~ .item-label .item-title svg path {
   stroke: #fefae0;
+  opacity: 0.8;
 }
 
 .item:active .item-meme .images {
@@ -127,6 +129,7 @@ main .item .item-label .item-title svg {
 .item:active .item-label .item-title .description .title-number {
   color: #353535;
   background-color: #fefae0;
+  opacity: 0.8;
 }
 
 .radio-btn:checked ~ .item-label .item-title svg {
