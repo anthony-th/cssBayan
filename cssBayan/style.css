@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Piedra&family=Rubik+Iso&family=Teko:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1f1f1f;
+  min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+header,
+main,
+footer {
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 47%;
+  color: #fefae0;
+  padding: 0 0 2rem;
+}
+
+svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.title {
+  font-family: 'Rubik Iso', cursive;
+  text-align: center;
+  padding: 1rem;
+  color: #ff006e;
+  font-size: 2.4rem;
+  user-select: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.item:first-child .item-title,
+.item:first-child .item-label  {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.item:last-child .item-title,
+.item:last-child .item-label,
+.item:last-child .radio-btn:checked ~ .item-meme {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.radio-btn {
+  display: none;
+}
+
+.item-label {
+  cursor: pointer;
+  background-color: #353535;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  padding: 0.5rem 1rem;
+  font-family: 'Teko', sans-serif;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.title-number {
+  font-family: 'Piedra', cursive;
+  color: #fefae0;
+  opacity: 85%;
+  padding: 0.05rem 0.4rem;
+  background-color: #353535;
+  border-radius: 0.2rem;
+  border: 0.001em solid #ff006e;
+}
+
+.radio-btn:checked ~ .item-label .item-title {
+  background-color: #fefae0;
+  color: #353535;
+}
+
+main .item .item-label .item-title svg {
+  visibility: hidden;
+}
+
+.description {
+  display: flex;
+  gap: 1rem;
+}
+
+.item:active .item-label .item-title,
+.item:active .item-label {
+  color: #fefae0;
+  background-color: #353535;
+  opacity: 0.8;
+}
+
+.item:active .radio-btn ~ .item-label .item-title svg path {
+  stroke: #fefae0;
+  opacity: 0.8;
+}
+
+.item:active .item-meme .images {
+  opacity: 0.5;
+}
+
+.item:active .item-label .item-title .description .title-number {
+  color: #353535;
+  background-color: #fefae0;
+  opacity: 0.8;
+}
+
+.radio-btn:checked ~ .item-label .item-title svg {
+  transform: rotate(45deg);
+}
+
+.item-meme {
+  cursor: pointer;
+  width: 98%;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #494949;
+}
+
+.images {
+  min-width: 45%;
+  max-width: 60%;
+  object-fit: cover;
+}
+
+.radio-btn:checked ~ .item-meme {
+  max-height: 100vh;
+  min-height: max-content;
+  padding: 1rem;
+}
+
+.radio-btn:checked ~ .item-meme .images {
+  min-height: 100%;
+}
+
+.copyright {
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  color: #666666;
+  padding: 1rem 0;
+  user-select: none;
+}
+
+.copyright-link {
+  text-decoration: none;
+  color: #666666;
+  padding: 0.05rem 0.25rem 0;
+}
+
+@media screen and (max-width: 1024px) {
+
+  main {
+    width: 67%;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }  
+
+}
+
+@media screen and (max-width: 830px) {
+
+  .item-title {
+    font-size: 1.8rem;
+  }
+
+  main {
+    width: 87%;
+  }
+
+  .images {
+    max-width: 76%;
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }  
+
+}
+
+@media screen and (max-width: 480px) {
+
+  main {
+    width: 87%;
+  }
+
+  .images {
+    max-width: 100%;
+  }
+
+  .radio-btn:checked ~ .item-meme .images {
+    margin: .4rem;
+  }
+
+  .item-title  {
+    font-size: 1.5em;
+    padding: 0.4rem;
+  }
+
+  .description {
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }  
+
+}
+
+@media (hover: hover) {
+
+  .copyright-link:hover {
+    color: #fefae0;
+    background-color: #494949;
+    border-radius: 0.25rem;
+    opacity: 1;
+  }
+
+  .item:hover .item-meme {
+    max-height: 100vh;
+    min-height: max-content;
+    padding: 1rem;
+  }
+
+  .radio-btn:hover ~ .item-meme .images {
+    min-height: 100%;
+  }
+
+  main:hover .item-title {
+    color: #fefae0;
+  }
+
+  main:hover .item-title {
+    background: #fefae0;
+    color: #353535;
+  }
+
+  .item:hover .item-label .item-title svg {
+    transform: rotate(45deg);
+  }
+
+  main:hover .item .item-label .item-title svg {
+    visibility: visible;
+  }
+
+}
