@@ -45,7 +45,7 @@ svg {
   text-align: center;
   padding: 1rem;
   color: #ff006e;
-  font-size: 2em;
+  font-size: 2.4rem;
   user-select: none;
 }
 
@@ -84,7 +84,7 @@ svg {
 .item-title {
   padding: 0.5rem 1rem;
   font-family: 'Teko', sans-serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -189,12 +189,17 @@ main .item .item-label .item-title svg {
     width: 67%;
   }
 
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }  
+
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 830px) {
 
   .item-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   main {
@@ -206,8 +211,13 @@ main .item .item-label .item-title svg {
   }
 
   .title {
-    font-size: 2em;
+    font-size: 2.1rem;
   }
+
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }  
 
 }
 
@@ -226,13 +236,22 @@ main .item .item-label .item-title svg {
   }
 
   .item-title  {
-    font-size: 1.4em;
-    padding: 0.5rem;
+    font-size: 1.5em;
+    padding: 0.4rem;
   }
 
   .description {
     gap: 0.5rem;
   }
+
+  .title {
+    font-size: 2.6rem;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }  
 
 }
 
