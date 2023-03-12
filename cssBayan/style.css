@@ -35,6 +35,11 @@ main {
   padding: 0 0 2rem;
 }
 
+svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
 .title {
   font-family: 'Rubik Iso', cursive;
   text-align: center;
